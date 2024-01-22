@@ -1,4 +1,4 @@
-![image](https://github.com/Kapilp96/apata-coding-test/assets/28197182/ce1ffced-2461-41e6-99d5-e33f8da65c7b)# apata-coding-test
+# apata-coding-test
 ## Overview
 A RESTful API for a secure credit card management system integrated with a mocked payment gateway API. This API should allow users to:
 ● Create a new credit card account with the cardholder's name and credit limit. Credit card numbers should be stored securely to prevent exposure to bad actors.
@@ -48,7 +48,6 @@ A RESTful API for a secure credit card management system integrated with a mocke
 
 14. To update the credit amount on a particular card, make a _PUT_ request to **http://localhost:8000/credit-cards/:id** where **id** is the unique id generated while adding new card.
     ![image](https://github.com/Kapilp96/apata-coding-test/assets/28197182/eca5be3d-0afc-4378-957e-e467c4155ed6)
-
 
 15. To delete a credit card, make a _DELETE_ request to **http://localhost:8000/credit-cards/:id** where **id** is the unique id generated while adding new card.
 
