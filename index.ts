@@ -162,6 +162,7 @@ app.post("/credit-cards/:cardNumber/charge", (req: Request, res: Response) => {
   }
 });
 
+// Route to process a credit card transaction
 app.post("/credit-cards/:cardNumber/credit", (req: Request, res: Response) => {
   const cardNumber = req.params.cardNumber;
 

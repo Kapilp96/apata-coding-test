@@ -24,7 +24,7 @@ export class CreditCardManagementSystem {
   /**
    * Adds a credit card to the database.
    *
-   * @param cardNumber - The card number of the credit card.
+   * @param name - The card holder name of the credit card.
    * @param amount - The amount associated with the credit card.
    *
    * @returns {boolean} - True if the credit card is added successfully, false otherwise.
@@ -36,8 +36,6 @@ export class CreditCardManagementSystem {
     const random = Math.floor(Math.random() * cardNumbers.length);
 
     const cardNumber = cardNumbers[random];
-
-    console.log("adding: ", cardNumber);
 
     const encryptedCardNumber = encrypt(cardNumber);
 
@@ -63,7 +61,7 @@ export class CreditCardManagementSystem {
   /**
    * Retrieves a credit card from the database.
    *
-   * @param cardNumber - The card number of the credit card.
+   * @param requestedID - The unique id of the credit card.
    *
    * @returns {CreditCard | undefined} - The credit card if found, undefined otherwise.
    */
@@ -104,7 +102,7 @@ export class CreditCardManagementSystem {
   /**
    * Updates the amount associated with a credit card in the database.
    *
-   * @param cardNumber - The card number of the credit card.
+   * @param requestedID - The unique id of the credit card.
    * @param amount - The new amount to be updated.
    *
    * @returns {boolean} - True if the amount is updated successfully, false otherwise.
@@ -127,7 +125,7 @@ export class CreditCardManagementSystem {
   /**
    * Deletes a credit card from the database.
    *
-   * @param cardNumber - The card number of the credit card.
+   *  @param requestedID - The unique id of the credit card.
    *
    * @returns {boolean} - True if the credit card is deleted successfully, false otherwise.
    */
@@ -146,6 +144,14 @@ export class CreditCardManagementSystem {
     return isCardDeleted;
   }
 
+  /**
+   * Charges a credit card from the database.
+   *
+   *  @param cardNumber - The cardNumber of the credit card.
+   *  @param amount - The amount to be charged.
+   *
+   * @returns {boolean} - True if the credit card is deleted successfully, false otherwise.
+   */
   chargeAmount(cardNumber: string, amount: number): boolean | Error {
     return PaymentGateway.processTransaction(
       this.database,
@@ -155,6 +161,14 @@ export class CreditCardManagementSystem {
     );
   }
 
+  /**
+   * Credits a credit card from the database.
+   *
+   *  @param cardNumber - The cardNumber of the credit card.
+   *  @param amount - The amount to be credited.
+   *
+   * @returns {boolean} - True if the credit card is deleted successfully, false otherwise.
+   */
   creditAmount(cardNumber: string, amount: number): boolean | Error {
     return PaymentGateway.processTransaction(
       this.database,

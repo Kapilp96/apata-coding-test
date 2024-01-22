@@ -57,6 +57,11 @@ export function validateToken(token?: string): boolean {
   }
 }
 
+/**
+ * Generates a JWT token
+ * 
+ * @returns token - JWT token
+ */
 export function generateToken(): string {
   return jwt.sign({ user: "123", name: "Kapil Patil" }, decrypt(secret), {
     expiresIn: "1h",

@@ -9,6 +9,8 @@ export class PaymentGateway {
   /**
    * Simulated method to process credit card transactions.
    *
+   * @param database - database instance
+   * @param type - transaction type
    * @param cardNumber - The card number of the credit card.
    * @param amount - The amount associated with the credit card.
    *
