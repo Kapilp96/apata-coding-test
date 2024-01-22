@@ -91,10 +91,7 @@ app.get("/credit-cards/:id", (req: Request, res: Response) => {
 
     console.log(creditCard);
     if (creditCard) {
-      return res.status(200).json({
-        cardNumber: creditCard.cardNumber,
-        amount: creditCard.amount,
-      });
+      return res.status(200).json(creditCard);
     } else {
       return res.status(404).json({ error: "Credit card not found." });
     }
